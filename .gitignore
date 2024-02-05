@@ -1,3 +1,7 @@
 /.vs
 /SuperHeroAPI/bin/Debug/net6.0
 /SuperHeroAPI/Migrations*
+/obj
+/SuperHeroAPI/obj*
+/SuperHeroAPI/bin*
+/bin/Debug
