@@ -33,7 +33,7 @@ namespace SuperHeroAPI.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<ActionResult<List<SuperHero>>> CreateSuperHero(SuperHero hero)
+        public async Task<ActionResult<List<SuperHero>>> CreateSuperHero(SuperHeroDto hero)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace SuperHeroAPI.Controllers
         }
 
         [HttpPut("update")]
-        public async Task<ActionResult<List<SuperHero>>> UpdateSuperHero(SuperHero hero)
+        public async Task<ActionResult<List<SuperHero>>> UpdateSuperHero(SuperHeroDto hero)
         {
             try
             {

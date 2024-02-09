@@ -28,7 +28,7 @@ namespace SuperHeroAPI.Services
             }
         }
 
-        public async Task<ActionResult<List<SuperHero>>> CreateSuperHero(SuperHero hero)
+        public async Task<ActionResult<List<SuperHero>>> CreateSuperHero(SuperHeroDto hero)
         {
             try
             {
@@ -39,7 +39,8 @@ namespace SuperHeroAPI.Services
                     FirtsName = hero.FirtsName,
                     LastName = hero.LastName,
                     Place = hero.Place,
-                    EvilCaraters = hero.EvilCaraters,
+                    Description = hero.Description,
+                    Image = hero.Image,
                 };
                 _context.SuperHeroes.Add(newSuperHero);
                 await _context.SaveChangesAsync();
@@ -51,7 +52,7 @@ namespace SuperHeroAPI.Services
             }
         }
 
-        public async Task<ActionResult<List<SuperHero>>> UpdateSuperHero(SuperHero hero)
+        public async Task<ActionResult<List<SuperHero>>> UpdateSuperHero(SuperHeroDto hero)
         {
             try
             {
@@ -64,6 +65,8 @@ namespace SuperHeroAPI.Services
                 dbHero.FirtsName = hero.FirtsName;
                 dbHero.LastName = hero.LastName;
                 dbHero.Place = hero.Place;
+                dbHero.Description = hero.Description;
+                dbHero.Image = hero.Image;
                 await _context.SaveChangesAsync();
                 return await _context.SuperHeroes.ToListAsync();
             }
