@@ -32,6 +32,20 @@ namespace SuperHeroAPI.Controllers
 
         }
 
+        [HttpGet("Get/{id}")]
+        public async Task<ActionResult<SuperHero>> GetById(int id)
+        {
+            try
+            {
+                var superHero = await _service.GetById(id);
+                return Ok(superHero.Value);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost("add")]
         public async Task<ActionResult<List<SuperHero>>> CreateSuperHero(SuperHeroDto hero)
         {

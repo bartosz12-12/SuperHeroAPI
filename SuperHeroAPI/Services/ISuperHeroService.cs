@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SuperHeroAPI.Data;
 using SuperHeroAPI.Models;
 
 namespace SuperHeroAPI.Services
@@ -9,5 +10,7 @@ namespace SuperHeroAPI.Services
         Task<ActionResult<List<SuperHero>>> DeleteSuperHero(int id);
         Task<List<SuperHero>> GetHeros();
         Task<ActionResult<List<SuperHero>>> UpdateSuperHero(SuperHeroDto hero);
+        Task<ActionResult<SuperHero>> GetById(int id);
+
     }
 }

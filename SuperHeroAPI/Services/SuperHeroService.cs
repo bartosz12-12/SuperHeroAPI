@@ -27,6 +27,19 @@ namespace SuperHeroAPI.Services
                 throw new Exception(ex.Message);
             }
         }
+        public async Task<ActionResult<SuperHero>> GetById(int id)
+        {
+            try
+            {
+                var database = await _context.SuperHeroes.FindAsync(id);
+
+                return database;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
         public async Task<ActionResult<List<SuperHero>>> CreateSuperHero(SuperHeroDto hero)
         {
